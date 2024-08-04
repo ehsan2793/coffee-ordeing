@@ -15,15 +15,18 @@ struct OrderCellView: View {
             VStack(alignment: .leading) {
                 Text(order.name)
                     .accessibilityIdentifier("orderNameText")
+                    .font(.headline)
+                    .foregroundStyle(.primary)
                     .bold()
                 Text("\(order.coffeeName) (\(order.size.rawValue))")
                     .accessibilityIdentifier("CoffeNameAndSizeText")
-                    .font(.caption)
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
             Spacer()
             Text(order.total as NSNumber, formatter: NumberFormatter.currency)
                 .accessibilityIdentifier("CoffeePriceText")
+                .foregroundStyle(Color.accentColor)
                 .font(.footnote)
                 .fontWeight(.semibold)
         }
