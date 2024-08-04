@@ -31,6 +31,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .environment(CoffeeModel(webservice: WebService()))
+    var config = Configration()
+    let webservice = WebService(baseURL: config.environment.baseURL)
+    let model: CoffeeModel = CoffeeModel(webservice: webservice)
+    return ContentView()
+        .environment(model)
 }
