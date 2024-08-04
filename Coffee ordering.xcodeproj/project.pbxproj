@@ -19,6 +19,7 @@
 		7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7CD1C93D2C5F455D00FB3A5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CD1C9402C5F455D00FB3A5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7CD1C9482C5F4E7200FB3A5F /* endpoints.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = endpoints.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,8 @@
 		7CD1C9382C5F455A00FB3A5F /* Coffee ordering */ = {
 			isa = PBXGroup;
 			children = (
+				7CD1C9482C5F4E7200FB3A5F /* endpoints.md */,
+				7CD1C9472C5F4E4E00FB3A5F /* Services */,
 				7CD1C9392C5F455A00FB3A5F /* Coffee_orderingApp.swift */,
 				7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */,
 				7CD1C93D2C5F455D00FB3A5F /* Assets.xcassets */,
@@ -65,6 +68,13 @@
 				7CD1C9402C5F455D00FB3A5F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7CD1C9472C5F4E4E00FB3A5F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
