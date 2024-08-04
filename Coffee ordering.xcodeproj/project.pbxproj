@@ -13,6 +13,7 @@
 		7CD1C9412C5F455D00FB3A5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1C9402C5F455D00FB3A5F /* Preview Assets.xcassets */; };
 		7CD1C94A2C5F57DF00FB3A5F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1C9492C5F57DF00FB3A5F /* WebService.swift */; };
 		7CD1C94D2C5F582500FB3A5F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1C94C2C5F582500FB3A5F /* Order.swift */; };
+		7CD1C94F2C5F7FEE00FB3A5F /* CoffeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1C94E2C5F7FEE00FB3A5F /* CoffeeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7CD1C9482C5F4E7200FB3A5F /* endpoints.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = endpoints.md; sourceTree = "<group>"; };
 		7CD1C9492C5F57DF00FB3A5F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		7CD1C94C2C5F582500FB3A5F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		7CD1C94E2C5F7FEE00FB3A5F /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				7CD1C94B2C5F580E00FB3A5F /* Models */,
-				7CD1C9482C5F4E7200FB3A5F /* endpoints.md */,
 				7CD1C9472C5F4E4E00FB3A5F /* Services */,
 				7CD1C9392C5F455A00FB3A5F /* Coffee_orderingApp.swift */,
 				7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */,
 				7CD1C93D2C5F455D00FB3A5F /* Assets.xcassets */,
+				7CD1C9482C5F4E7200FB3A5F /* endpoints.md */,
 				7CD1C93F2C5F455D00FB3A5F /* Preview Content */,
 			);
 			path = "Coffee ordering";
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7CD1C94C2C5F582500FB3A5F /* Order.swift */,
+				7CD1C94E2C5F7FEE00FB3A5F /* CoffeeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CD1C94A2C5F57DF00FB3A5F /* WebService.swift in Sources */,
+				7CD1C94F2C5F7FEE00FB3A5F /* CoffeeModel.swift in Sources */,
 				7CD1C93C2C5F455A00FB3A5F /* ContentView.swift in Sources */,
 				7CD1C94D2C5F582500FB3A5F /* Order.swift in Sources */,
 				7CD1C93A2C5F455A00FB3A5F /* Coffee_orderingApp.swift in Sources */,

@@ -15,7 +15,7 @@ enum NetworkError: Error {
 
 class WebService {
     func getOrders() async throws -> [Order] {
-        let urlString = "https://island-bramble.glitch.me/orders"
+        let urlString = "https://island-bramble.glitch.me/test/orders"
         guard let url = URL(string: urlString) else { throw NetworkError.badURL }
 
         guard let (data, response) = try? await URLSession.shared.data(from: url) else {
@@ -27,9 +27,7 @@ class WebService {
         guard let orders = try? JSONDecoder().decode([Order].self, from: data) else {
             throw NetworkError.decodingError
         }
-
         
-        print(orders)
         return orders
     }
 }
