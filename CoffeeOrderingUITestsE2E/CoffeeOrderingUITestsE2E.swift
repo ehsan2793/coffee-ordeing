@@ -7,14 +7,15 @@
 
 import XCTest
 
-final class CoffeeOrderingUITestsE2E: XCTestCase {
+final class when_app_is_launched_with_no_orders: XCTestCase {
     
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func test_should_no_order_no_message_is_displayed() throws {
         let app = XCUIApplication()
+        continueAfterFailure = false
+        app.launchEnvironment = ["ENV" : "TEST"]
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        XCTAssertEqual("No Orders available", app.staticTexts["noOrdersText"].label)
     }
-
+    
 }

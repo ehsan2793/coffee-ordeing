@@ -77,16 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				7C9C2F042C60153300541AAC /* CoffeeOrderingUITestsE2E.swift */,
-				7C9C2F0D2C60156200541AAC /* New Group */,
 			);
 			path = CoffeeOrderingUITestsE2E;
-			sourceTree = "<group>";
-		};
-		7C9C2F0D2C60156200541AAC /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		7CD1C92D2C5F455900FB3A5F = {

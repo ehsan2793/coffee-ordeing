@@ -23,14 +23,18 @@ enum AppEnvironment {
 
 enum Endpoints {
     case allOrders
+    case placeOrder
+
     var path: String {
         switch self {
         case .allOrders:
             return "/orders"
+
+        case .placeOrder:
+            return "/orders"
         }
     }
 }
-
 
 struct Configration {
     lazy var environment: AppEnvironment = {
@@ -40,6 +44,6 @@ struct Configration {
         if env == "TEST" {
             return AppEnvironment.test
         }
-        return AppEnvironment.test
+        return AppEnvironment.dev
     }()
 }
