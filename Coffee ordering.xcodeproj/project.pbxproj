@@ -72,16 +72,16 @@
 		7CD1C9382C5F455A00FB3A5F /* Coffee ordering */ = {
 			isa = PBXGroup;
 			children = (
-				7C9C2EFB2C5FF47900541AAC /* Utils */,
-				7CD1C9532C5F8DC600FB3A5F /* Views */,
-				7CD1C9502C5F8CCA00FB3A5F /* Extentions */,
-				7CD1C94B2C5F580E00FB3A5F /* Models */,
-				7CD1C9472C5F4E4E00FB3A5F /* Services */,
+				7CD1C93D2C5F455D00FB3A5F /* Assets.xcassets */,
 				7CD1C9392C5F455A00FB3A5F /* Coffee_orderingApp.swift */,
 				7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */,
-				7CD1C93D2C5F455D00FB3A5F /* Assets.xcassets */,
 				7CD1C9482C5F4E7200FB3A5F /* endpoints.md */,
+				7CD1C9502C5F8CCA00FB3A5F /* Extentions */,
+				7CD1C94B2C5F580E00FB3A5F /* Models */,
 				7CD1C93F2C5F455D00FB3A5F /* Preview Content */,
+				7CD1C9472C5F4E4E00FB3A5F /* Services */,
+				7C9C2EFB2C5FF47900541AAC /* Utils */,
+				7CD1C9532C5F8DC600FB3A5F /* Views */,
 			);
 			path = "Coffee ordering";
 			sourceTree = "<group>";

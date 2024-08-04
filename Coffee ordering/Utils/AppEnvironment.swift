@@ -7,28 +7,6 @@
 
 import Foundation
 
-enum Endpoints {
-    case allOrders
-    var path: String {
-        switch self {
-        case .allOrders:
-            return "/orders"
-        }
-    }
-}
-
-struct Configration {
-    lazy var environment: AppEnvironment = {
-        guard let env = ProcessInfo.processInfo.environment["ENV"] else {
-            return AppEnvironment.dev
-        }
-        if env == "TEST" {
-            return AppEnvironment.test
-        }
-        return AppEnvironment.dev
-    }()
-}
-
 enum AppEnvironment {
     case dev
     case test
@@ -41,4 +19,27 @@ enum AppEnvironment {
             return URL(string: "https://island-bramble.glitch.me/test")!
         }
     }
+}
+
+enum Endpoints {
+    case allOrders
+    var path: String {
+        switch self {
+        case .allOrders:
+            return "/orders"
+        }
+    }
+}
+
+
+struct Configration {
+    lazy var environment: AppEnvironment = {
+        guard let env = ProcessInfo.processInfo.environment["ENV"] else {
+            return AppEnvironment.dev
+        }
+        if env == "TEST" {
+            return AppEnvironment.test
+        }
+        return AppEnvironment.dev
+    }()
 }

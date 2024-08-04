@@ -29,6 +29,7 @@ class WebService {
 
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NetworkError.badRequest
         }
+
         guard let orders = try? JSONDecoder().decode([Order].self, from: data) else {
             throw NetworkError.decodingError
         }
