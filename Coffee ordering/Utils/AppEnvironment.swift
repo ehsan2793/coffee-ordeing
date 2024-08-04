@@ -40,6 +40,6 @@ struct Configration {
         if env == "TEST" {
             return AppEnvironment.test
         }
-        return AppEnvironment.dev
+        return AppEnvironment.test
     }()
 }

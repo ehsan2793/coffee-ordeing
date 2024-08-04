@@ -8,9 +8,9 @@
 import Foundation
 import Observation
 
-//@MainActor
 @Observable class CoffeeModel {
     let webservice: WebService
+    //  private(set) mean that orders can only be set from inside of this class
     private(set) var orders: [Order] = []
 
     init(webservice: WebService) {
