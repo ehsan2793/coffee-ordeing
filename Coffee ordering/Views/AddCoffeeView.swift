@@ -46,15 +46,16 @@ struct AddCoffeeView: View {
                 .accessibilityIdentifier("name")
             Text(errors.name)
                 .visable(!errors.name.isEmpty)
-                .font(.system(.caption,design: .rounded))
+                .font(.system(.caption, design: .rounded))
                 .foregroundStyle(.red)
                 .fontWeight(.semibold)
 
             TextField("Coffee Name", text: $coffeeName)
                 .accessibilityIdentifier("coffeeName")
+
             Text(errors.coffeeName)
                 .visable(!errors.coffeeName.isEmpty)
-                .font(.system(.caption,design: .rounded))
+                .font(.system(.caption, design: .rounded))
                 .foregroundStyle(.red)
                 .fontWeight(.semibold)
 
@@ -62,7 +63,7 @@ struct AddCoffeeView: View {
                 .accessibilityIdentifier("price")
             Text(errors.price)
                 .visable(!errors.price.isEmpty)
-                .font(.system(.caption,design: .rounded))
+                .font(.system(.caption, design: .rounded))
                 .foregroundStyle(.red)
                 .fontWeight(.semibold)
 
