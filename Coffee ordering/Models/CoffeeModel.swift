@@ -20,10 +20,9 @@ import Observation
     func populateOrders() async throws {
         orders = try await webservice.getOrders()
     }
-    
-    func createNewOrder(order:Order) async throws {
+
+    func placeOrder(order: Order) async throws {
         let newOrder = try await webservice.placeOrder(order: order)
         orders.append(newOrder)
-        
     }
 }

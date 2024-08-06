@@ -19,6 +19,17 @@ struct AddCoffeeView: View {
     @State private var price: String = ""
     @State private var coffeeSize: CoffeeSize = .medium
     @State private var errors: AddCoffeeErrors = AddCoffeeErrors()
+    @Environment(CoffeeModel.self) private var model
+    @Environment(\.dismiss) private var dismiss
+    private func placeOrder() async {
+        let order = Order(name: name, coffeeName: coffeeName, total: Double(price)!, size: coffeeSize)
+        do {
+            try await model.placeOrder(order: order)
+            dismiss()
+        } catch {
+            print(error)
+        }
+    }
 
     var isValid: Bool {
         errors = AddCoffeeErrors()
@@ -41,49 +52,61 @@ struct AddCoffeeView: View {
     }
 
     var body: some View {
-        Form {
-            TextField("Name", text: $name)
-                .accessibilityIdentifier("name")
-            Text(errors.name)
-                .visable(!errors.name.isEmpty)
-                .font(.system(.caption, design: .rounded))
-                .foregroundStyle(.red)
-                .fontWeight(.semibold)
+        NavigationStack {
+            Form {
+                TextField("Name", text: $name)
+                    .accessibilityIdentifier("name")
+                Text(errors.name)
+                    .visable(!errors.name.isEmpty)
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(.red)
+                    .fontWeight(.semibold)
 
-            TextField("Coffee Name", text: $coffeeName)
-                .accessibilityIdentifier("coffeeName")
+                TextField("Coffee Name", text: $coffeeName)
+                    .accessibilityIdentifier("coffeeName")
 
-            Text(errors.coffeeName)
-                .visable(!errors.coffeeName.isEmpty)
-                .font(.system(.caption, design: .rounded))
-                .foregroundStyle(.red)
-                .fontWeight(.semibold)
+                Text(errors.coffeeName)
+                    .visable(!errors.coffeeName.isEmpty)
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(.red)
+                    .fontWeight(.semibold)
 
-            TextField("Price", text: $price)
-                .accessibilityIdentifier("price")
-            Text(errors.price)
-                .visable(!errors.price.isEmpty)
-                .font(.system(.caption, design: .rounded))
-                .foregroundStyle(.red)
-                .fontWeight(.semibold)
+                TextField("Price", text: $price)
+                    .accessibilityIdentifier("price")
 
-            Picker("Select Size", selection: $coffeeSize) {
-                ForEach(CoffeeSize.allCases, id: \.rawValue) { size in
-                    Text(size.rawValue).tag(size)
+                Text(errors.price)
+                    .visable(!errors.price.isEmpty)
+                    .font(.system(.caption, design: .rounded))
+                    .foregroundStyle(.red)
+                    .fontWeight(.semibold)
+
+                Picker("Select Size", selection: $coffeeSize) {
+                    ForEach(CoffeeSize.allCases, id: \.rawValue) { size in
+                        Text(size.rawValue).tag(size)
+                    }
                 }
-            }
-            .pickerStyle(.segmented)
+                .pickerStyle(.segmented)
 
-            Button("Place Order") {
-                if isValid {
+                Button("Place Order") {
+                    if isValid {
+                        Task {
+                            await placeOrder()
+                        }
+                    }
                 }
+                .centerHorizontally()
+                .accessibilityIdentifier("placeOrderButton")
             }
-            .centerHorizontally()
-            .accessibilityIdentifier("placeOrderButton")
+            .navigationTitle("Add Coffee")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 #Preview {
-    AddCoffeeView()
+    var config = Configration()
+    let webservice = WebService(baseURL: config.environment.baseURL)
+    let model: CoffeeModel = CoffeeModel(webservice: webservice)
+    return AddCoffeeView()
+        .environment(model)
 }
