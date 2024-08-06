@@ -28,19 +28,19 @@ class WebService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONEncoder().encode(order)
 
-        guard let (data, response) = try? await URLSession.shared.data(for: request) else { 
-            throw NetworkError.badRequest }
-        
+        guard let (data, response) = try? await URLSession.shared.data(for: request) else {
+            throw NetworkError.badRequest
+        }
+
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw NetworkError.badRequest
         }
-        
+
         guard let order = try? JSONDecoder().decode(Order.self, from: data) else {
             throw NetworkError.decodingError
         }
-        
-        return order
 
+        return order
     }
 
     func getOrders() async throws -> [Order] {
