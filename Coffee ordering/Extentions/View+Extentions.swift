@@ -16,4 +16,14 @@ extension View {
             Spacer()
         }
     }
+
+    @ViewBuilder
+    func visable(_ value: Bool) -> some View {
+        switch value {
+        case true:
+            self
+        default:
+            EmptyView()
+        }
+    }
 }
