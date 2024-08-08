@@ -19,6 +19,10 @@ class WebService {
     init(baseURL: URL) {
         self.baseURL = baseURL
     }
+    
+    func deleteOrder(id: Int) async throws -> Order {
+        <#function body#>
+    }
 
     func placeOrder(order: Order) async throws -> Order {
         guard let url = URL(string: Endpoints.placeOrder.path, relativeTo: baseURL) else { throw NetworkError.badURL }

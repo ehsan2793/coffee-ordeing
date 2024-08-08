@@ -24,6 +24,7 @@ enum AppEnvironment {
 enum Endpoints {
     case allOrders
     case placeOrder
+    case deleteOrder(Int)
 
     var path: String {
         switch self {
@@ -32,6 +33,9 @@ enum Endpoints {
 
         case .placeOrder:
             return "/orders"
+
+        case let .deleteOrder(orderId):
+            return "/orders/\(orderId)"
         }
     }
 }
