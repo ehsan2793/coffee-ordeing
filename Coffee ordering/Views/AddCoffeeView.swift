@@ -24,8 +24,8 @@ struct AddCoffeeView: View {
     private func placeOrder() async {
         let order = Order(name: name, coffeeName: coffeeName, total: Double(price)!, size: coffeeSize)
         do {
-            try await model.placeOrder(order: order)
             dismiss()
+            try await model.placeOrder(order: order)
         } catch {
             print(error)
         }
@@ -94,8 +94,8 @@ struct AddCoffeeView: View {
                         }
                     }
                 }
-                .centerHorizontally()
                 .accessibilityIdentifier("placeOrderButton")
+                .centerHorizontally()
             }
             .navigationTitle("Add Coffee")
             .navigationBarTitleDisplayMode(.inline)

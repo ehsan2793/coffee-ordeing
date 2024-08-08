@@ -40,6 +40,7 @@
 		7C9C2F102C619E4D00541AAC /* AddCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeView.swift; sourceTree = "<group>"; };
 		7C9C2F132C61A75E00541AAC /* View+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extentions.swift"; sourceTree = "<group>"; };
 		7C9C2F172C61B19500541AAC /* String+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
+		7C9C2F1C2C62E67E00541AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7CD1C9362C5F455A00FB3A5F /* Coffee ordering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee ordering.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD1C9392C5F455A00FB3A5F /* Coffee_orderingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_orderingApp.swift; sourceTree = "<group>"; };
 		7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		7C9C2F032C60153300541AAC /* CoffeeOrderingUITestsE2E */ = {
 			isa = PBXGroup;
 			children = (
+				7C9C2F1C2C62E67E00541AAC /* Info.plist */,
 				7C9C2F042C60153300541AAC /* CoffeeOrderingUITestsE2E.swift */,
 			);
 			path = CoffeeOrderingUITestsE2E;
@@ -306,6 +308,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G3TMK8KB93;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeOrderingUITestsE2E/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ehsanApp.CoffeeOrderingUITestsE2E;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -323,6 +326,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G3TMK8KB93;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeOrderingUITestsE2E/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ehsanApp.CoffeeOrderingUITestsE2E;
 				PRODUCT_NAME = "$(TARGET_NAME)";
