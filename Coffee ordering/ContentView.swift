@@ -19,6 +19,19 @@ struct ContentView: View {
         }
     }
 
+    private func deleteOrder(_ indexSet: IndexSet) async {
+        for index in indexSet {
+            let order = model.orders[index]
+            guard let orderId = order.id else { return }
+
+            do {
+                try await model.deleteOrder(orderId)
+            } catch {
+                print(error)
+            }
+        }
+    }
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -26,12 +39,18 @@ struct ContentView: View {
                     Text("No Orders available")
                         .accessibilityIdentifier("noOrdersText")
                 } else {
-                    List(model.orders) { order in
-                        VStack {
-                            Text("\(order.id ?? 0)")
-                            OrderCellView(order: order)
+                    List {
+                        ForEach(model.orders) { order in
+                            VStack {
+                                Text("\(order.id ?? 0)")
+                                OrderCellView(order: order)
+                            }
                         }
-                        
+                        .onDelete(perform: { indexSet in
+                            Task {
+                                await deleteOrder(indexSet)
+                            }
+                        })
                     }
                 }
             }
