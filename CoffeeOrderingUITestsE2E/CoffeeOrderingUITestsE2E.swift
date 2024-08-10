@@ -7,6 +7,21 @@
 
 import XCTest
 
+final class when_deleteing_an_order: XCTestCase {
+    private var app: XCUIApplication!
+    
+    override func setUp() {
+        super.setUp()
+        app = XCUIApplication()
+        app.launchEnvironment = ["ENV": "TEST"]
+        app.launch()
+    }
+    
+    func test_should_delet_order(){
+        
+    }
+}
+
 final class when_app_is_launched_with_no_orders: XCTestCase {
     func test_should_no_order_no_message_is_displayed() throws {
         let app = XCUIApplication()
