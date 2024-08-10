@@ -33,7 +33,7 @@ final class when_adding_a_new_coffee_order: XCTestCase {
         let nameTextField = app.textFields["name"]
         let coffeeNameTextField = app.textFields["coffeeName"]
         let priceTextField = app.textFields["price"]
-        let placeOrderButton = app.textFields["placeOrderButton"]
+        _ = app.textFields["placeOrderButton"]
         
         nameTextField.tap()
         nameTextField.typeText("Jpn")
