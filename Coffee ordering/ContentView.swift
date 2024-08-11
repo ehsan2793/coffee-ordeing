@@ -41,8 +41,8 @@ struct ContentView: View {
                 } else {
                     List {
                         ForEach(model.orders) { order in
-                            VStack {
-                                Text("\(order.id ?? 0)")
+
+                            NavigationLink(value: order.id) {
                                 OrderCellView(order: order)
                             }
                         }
@@ -54,6 +54,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationDestination(for: Int.self, destination: { orderId in
+                OrderDetailsView(orderId: orderId)
+            })
             .task {
                 await populateOrders()
             }

@@ -17,6 +17,13 @@ import Observation
         self.webservice = webservice
     }
 
+    func orderById(id: Int) -> Order? {
+        guard let index = orders.firstIndex(where: { $0.id == id }) else {
+            return nil
+        }
+        return orders[index]
+    }
+
     func populateOrders() async throws {
         orders = try await webservice.getOrders()
     }
@@ -29,5 +36,14 @@ import Observation
     func deleteOrder(_ orderId: Int) async throws {
         let deletedOrder = try await webservice.deleteOrder(id: orderId)
         orders = orders.filter { $0.id != deletedOrder.id }
+    }
+
+    func updateOrder(_ orderId: Int, order: Order) async throws {
+        let updatedOrder = try await webservice.deleteOrder(id: order.id!)
+        if let index = orders.firstIndex(where: { $0.id == updatedOrder.id! }) {
+            orders[index] = updatedOrder
+        } else {
+            print("Did not find order with id of \(order.id!)")
+        }
     }
 }

@@ -12,6 +12,7 @@
 		7C9C2F112C619E4D00541AAC /* AddCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C2F102C619E4D00541AAC /* AddCoffeeView.swift */; };
 		7C9C2F142C61A75E00541AAC /* View+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C2F132C61A75E00541AAC /* View+Extentions.swift */; };
 		7C9C2F182C61B19500541AAC /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C2F172C61B19500541AAC /* String+Extentions.swift */; };
+		7C9C2F1F2C68299500541AAC /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C2F1E2C68299500541AAC /* OrderDetailsView.swift */; };
 		7CD1C93A2C5F455A00FB3A5F /* Coffee_orderingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1C9392C5F455A00FB3A5F /* Coffee_orderingApp.swift */; };
 		7CD1C93C2C5F455A00FB3A5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */; };
 		7CD1C93E2C5F455D00FB3A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1C93D2C5F455D00FB3A5F /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		7C9C2F132C61A75E00541AAC /* View+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extentions.swift"; sourceTree = "<group>"; };
 		7C9C2F172C61B19500541AAC /* String+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
 		7C9C2F1C2C62E67E00541AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7C9C2F1E2C68299500541AAC /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
 		7CD1C9362C5F455A00FB3A5F /* Coffee ordering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee ordering.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD1C9392C5F455A00FB3A5F /* Coffee_orderingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_orderingApp.swift; sourceTree = "<group>"; };
 		7CD1C93B2C5F455A00FB3A5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				7CD1C9582C5F8E0E00FB3A5F /* OrderCellView.swift */,
 				7C9C2F102C619E4D00541AAC /* AddCoffeeView.swift */,
+				7C9C2F1E2C68299500541AAC /* OrderDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				7C9C2F182C61B19500541AAC /* String+Extentions.swift in Sources */,
 				7CD1C94D2C5F582500FB3A5F /* Order.swift in Sources */,
 				7CD1C93A2C5F455A00FB3A5F /* Coffee_orderingApp.swift in Sources */,
+				7C9C2F1F2C68299500541AAC /* OrderDetailsView.swift in Sources */,
 				7C9C2F142C61A75E00541AAC /* View+Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

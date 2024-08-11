@@ -14,6 +14,7 @@ struct AddCoffeeErrors {
 }
 
 struct AddCoffeeView: View {
+    var order: Order? = nil
     @State private var name: String = ""
     @State private var coffeeName: String = ""
     @State private var price: String = ""
@@ -49,6 +50,15 @@ struct AddCoffeeView: View {
         }
 
         return errors.name.isEmpty && errors.coffeeName.isEmpty && errors.price.isEmpty
+    }
+
+    private func populateExistingOrder() {
+        if let order = order {
+            name = order.name
+            coffeeName = order.coffeeName
+            price = String(order.total)
+            coffeeSize = order.size
+        }
     }
 
     var body: some View {
@@ -98,6 +108,9 @@ struct AddCoffeeView: View {
                 .centerHorizontally()
             }
             .navigationTitle("Add Coffee")
+            .onAppear {
+                populateExistingOrder()
+            }
             .navigationBarTitleDisplayMode(.inline)
         }
     }
