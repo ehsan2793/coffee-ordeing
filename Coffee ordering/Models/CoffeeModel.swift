@@ -38,7 +38,7 @@ import Observation
         orders = orders.filter { $0.id != deletedOrder.id }
     }
 
-    func updateOrder(_ orderId: Int, order: Order) async throws {
+    func updateOrder(order: Order) async throws {
         let updatedOrder = try await webservice.deleteOrder(id: order.id!)
         if let index = orders.firstIndex(where: { $0.id == updatedOrder.id! }) {
             orders[index] = updatedOrder

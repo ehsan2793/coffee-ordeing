@@ -61,6 +61,24 @@ struct AddCoffeeView: View {
         }
     }
 
+    private func saveOrUpdate() async {
+        if let order {
+            var editOrder = order
+            editOrder.name = name
+            editOrder.coffeeName = coffeeName
+            editOrder.size = coffeeSize
+            editOrder.total = Double(price)!
+            do {
+                try await model.updateOrder(order: order)
+                dismiss()
+            } catch {
+                print(error)
+            }
+        } else {
+            await placeOrder()
+        }
+    }
+
     var body: some View {
         NavigationStack {
             Form {
@@ -97,17 +115,17 @@ struct AddCoffeeView: View {
                 }
                 .pickerStyle(.segmented)
 
-                Button("Place Order") {
+                Button(order != nil ? "Edit Order" : "Place Order") {
                     if isValid {
                         Task {
-                            await placeOrder()
+                            await saveOrUpdate()
                         }
                     }
                 }
                 .accessibilityIdentifier("placeOrderButton")
                 .centerHorizontally()
             }
-            .navigationTitle("Add Coffee")
+            .navigationTitle(order != nil ? "Edit Order" : "Add Coffee")
             .onAppear {
                 populateExistingOrder()
             }

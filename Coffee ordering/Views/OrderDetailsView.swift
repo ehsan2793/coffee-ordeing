@@ -11,6 +11,15 @@ struct OrderDetailsView: View {
     let orderId: Int
     @State private var isPresented: Bool = false
     @Environment(CoffeeModel.self) var model
+
+    func deleteOrder() async {
+        do {
+            try await model.deleteOrder(orderId)
+        } catch {
+            print(error)
+        }
+    }
+
     var body: some View {
         VStack {
             if let order = model.orderById(id: orderId) {
@@ -19,33 +28,32 @@ struct OrderDetailsView: View {
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .accessibilityIdentifier("CoffeNameText")
-                    
+
                     Text(order.size.rawValue)
                         .foregroundStyle(.secondary)
-                    
+
                     Text(order.total as NSNumber, formatter: NumberFormatter.currency)
-                    
+
                     HStack {
                         Spacer()
                         Button("Delete Order", role: .destructive) {
-                            
+                            Task {
+                                await deleteOrder()
+                            }
                         }
                         Button("Edit Order") {
                             isPresented = true
                         }
                         .accessibilityIdentifier("EditOrderButton")
-                        
+
                         Spacer()
                     } //: HSTACK
 
                 }.sheet(isPresented: $isPresented, content: {
                     AddCoffeeView(order: order)
                 })
-                
-                
             }
             Spacer()
-            
         }
         .padding()
     }
