@@ -11,10 +11,12 @@ struct OrderDetailsView: View {
     let orderId: Int
     @State private var isPresented: Bool = false
     @Environment(CoffeeModel.self) var model
+    @Environment(\.dismiss) private var dismiss
 
     func deleteOrder() async {
         do {
             try await model.deleteOrder(orderId)
+            dismiss()
         } catch {
             print(error)
         }
